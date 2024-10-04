@@ -1,4 +1,4 @@
-package com.bootcamp.demo.demo_sb_restapi.controller;
+package com.bootcamp.demo.demo_sb_restapi.controller.impl;
 
 import java.util.List;
 import java.util.stream.Collectors;
