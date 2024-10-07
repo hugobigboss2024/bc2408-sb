@@ -1,5 +1,15 @@
+# pre-defined variables
 server:
-  port: 8080
+  port: 8081
+
+# pre-defined variables
 spring:
-  application:
-    name: demo-sb-restapi
+  datasource:
+    driverClassName: "org.postgresql.Driver"
+    url: "jdbc:postgresql://127.0.0.1:5432/db_bc2408"
+    username: "postgres"
+    password: "admin1234"
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: create
+# Custom variables
