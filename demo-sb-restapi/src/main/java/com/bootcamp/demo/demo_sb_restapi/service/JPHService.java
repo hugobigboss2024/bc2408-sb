@@ -9,7 +9,5 @@ import com.bootcamp.demo.demo_sb_restapi.model.dto.jph.UserDTO;
 public interface JPHService {
     List<UserDTO> getUsers();
 
-    List<UserDTO> saveUsers(List<UserDTO> userDTOs);
-
     List<UserEntity> saveUsers();
 }

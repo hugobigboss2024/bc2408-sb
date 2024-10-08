@@ -45,6 +45,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- JPA + PostgreSQL DB -->
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
