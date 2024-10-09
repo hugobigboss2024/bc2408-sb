@@ -1,1 +1,2 @@
-spring.application.name=bc-calculator
+server:
+  poort: 8080
