@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bootcamp.demo.demo_sb_restapi.controller.JPHOperation;
+import com.bootcamp.demo.demo_sb_restapi.entity.UserEntity;
 import com.bootcamp.demo.demo_sb_restapi.model.dto.jph.UserDTO;
 import com.bootcamp.demo.demo_sb_restapi.service.JPHService;
 
@@ -32,5 +33,10 @@ public class JPHController implements JPHOperation {
     @Override
     public List<UserDTO> getUsers() {
         return this.jphService.getUsers();
+    }
+
+    @Override
+    public List<UserEntity> createUsers() {
+        return this.jphService.saveUsers();
     }
 }

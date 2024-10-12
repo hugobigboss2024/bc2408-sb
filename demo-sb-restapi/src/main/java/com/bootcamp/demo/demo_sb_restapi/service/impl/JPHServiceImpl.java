@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.bootcamp.demo.demo_sb_restapi.entity.UserEntity;
@@ -29,6 +30,9 @@ public class JPHServiceImpl implements JPHService {
 
   @Autowired
   private UserRepository userRepository;
+
+  @Autowired
+  private JPHMapper jphMapper;
 
   // ! @Value (inject from yml) is similar to @Autowired (inject from Spring
   // Context)
@@ -72,8 +76,12 @@ public class JPHServiceImpl implements JPHService {
      * toUriString() = 轉換為字符串：這行代碼調用 toUriString() 方法，這個方法將 Url 對象轉換為完整的 URL 字符串。
      * 意義：這是最終生成的 URL，可以用於發送請求或其他需要 URL 的情況。
      */
-    UserDTO[] users = this.restTemplate.getForObject(url, UserDTO[].class); // 10
-                                                                            // ms
+    UserDTO[] users;
+    try {
+      users = this.restTemplate.getForObject(url, UserDTO[].class);
+    } catch (RestClientException e) {
+      users = new UserDTO[0];
+    }
     return List.of(users);
   }
 
@@ -87,10 +95,12 @@ public class JPHServiceImpl implements JPHService {
   private List<UserEntity> saveUsers(List<UserDTO> userDTOs) {
     // Mapper: from List<UserDTO> to List<UserEntity>
     List<UserEntity> userEntities = userDTOs.stream() //
-        .map(e -> JPHMapper.map(e)) //
+        .map(e -> this.jphMapper.map(e)) //
         .collect(Collectors.toList());
     return userRepository.saveAll(userEntities);
   }
+  // saveUser(int id)
+  // -> stream filter -> save()
 }
 /*
  * Url.builder() = 建造者模式：Url.builder() 是一個靜態方法，通常用於生成一個 Url
