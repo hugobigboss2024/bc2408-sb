@@ -7,12 +7,20 @@ import com.example.e2.dto.Posts;
 import com.example.e2.dto.User;
 
 public interface PlaceholderService {
-    List<User> getUsers();
+    List<User> getAllUsers();
 
-    List<Posts> getPosts();
+    User getUserById(Long id);
+
+    List<Posts> getAllPosts();
+
+    Posts getPostById(Long postId);
+
+    List<Posts> getPostsByUserId(Long userId);
 
     List<Comments> getAllComments();
 
-    List<Comments> getCommentsByPostId(int postId);
+    List<Comments> getCommentsByPostId(Long postId);
+
+    List<Comments> getCommentsByUserId(Long userId);
 
 }
