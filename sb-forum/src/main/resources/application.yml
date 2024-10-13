@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: e2
+
+server:
+  port: 8080
+
+placeholder:
+  base-url: https://jsonplaceholder.typicode.com
+
