@@ -1,5 +1,7 @@
 package com.bootcamp.demo.demo_sb_restapi.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +17,10 @@ import com.bootcamp.demo.demo_sb_restapi.entity.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     // 1. save(): UserEntity & saveAll()
     // 2. findAll
+
+    Optional<UserEntity> findByWebsite(String website);
+
+    Optional<UserEntity> findByWebsiteAndPhone(String);
 }
 // ! Concept of Hibernate:
 // 1. Hibernate generate ABC.class, which is implementing interface

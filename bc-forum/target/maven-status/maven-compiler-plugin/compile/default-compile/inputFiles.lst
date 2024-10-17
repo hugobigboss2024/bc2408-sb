@@ -1,0 +1,17 @@
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\BcForumApplication.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\config\AppConfig.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\Controller\JsonPlaceholderController.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\AddressDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\CommentDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\CompanyDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\GeoDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\PostDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\DTO\UserDTO.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\Address.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\Comment.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\Company.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\Geo.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\Post.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\model\User.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\service\JsonPlaceholderService.java
+c:\bootcamp\bc2408-sb\bc-forum\src\main\java\com\demo\forum\bc_forum\service\JsonPlaceholderServiceImpl.java
