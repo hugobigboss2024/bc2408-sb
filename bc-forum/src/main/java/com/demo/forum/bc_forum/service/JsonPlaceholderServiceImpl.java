@@ -7,11 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import com.demo.forum.bc_forum.model.Comment;
 import com.demo.forum.bc_forum.model.Post;
 import com.demo.forum.bc_forum.model.User;
+import com.demo.forum.bc_forum.util.Scheme;
+import com.demo.forum.bc_forum.util.Url;
 
 @Service
 public class JsonPlaceholderServiceImpl implements JsonPlaceholderService {
@@ -33,14 +36,19 @@ public class JsonPlaceholderServiceImpl implements JsonPlaceholderService {
 
     @Override
     public List<User> getAllUsers() {
-        String url = "https://jsonplaceholder.typicode.com/users";
-        User[] users = restTemplate.getForObject(url, User[].class);
-        return Arrays.asList(users);
+        String url = Url.builder().scheme(Scheme.HTTPS).domain(JDomain).endpoint(JUser).build().toUriString();
+        User[] users;
+        try {
+            users = this.restTemplate.getForObject(url, User[].class);
+        } catch (RestClientException e) {
+            throw new RestClientException("Error in getting users", e);
+        }
+        return List.of(users);
     }
 
     @Override
     public List<Post> getAllPosts() {
-        String url = "https://jsonplaceholder.typicode.com/posts";
+        String url = Url.builder().scheme(Scheme.HTTPS).domain(JDomain).endpoint("posts").build().toUriString();
         Post[] posts = restTemplate.getForObject(url, Post[].class);
         return List.of(posts);
     }

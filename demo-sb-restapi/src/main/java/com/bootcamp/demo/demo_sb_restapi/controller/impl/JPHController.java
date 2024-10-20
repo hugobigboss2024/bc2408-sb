@@ -39,4 +39,16 @@ public class JPHController implements JPHOperation {
     public List<UserEntity> createUsers() {
         return this.jphService.saveUsers();
     }
+
+    @Override
+    public Boolean deleteUsers(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteUsers'");
+    }
+
+    @Override
+    public UserEntity updateUser(Long id, UserEntity entity) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
+    }
 }

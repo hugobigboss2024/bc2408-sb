@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.forum.bc_forum.model.Comment;
-import com.demo.forum.bc_forum.model.Post;
-import com.demo.forum.bc_forum.model.User;
-import com.demo.forum.bc_forum.service.JsonPlaceholderServiceImpl;
+import main.java.com.demo.forum.bc_forum.model.Post;
+import main.java.com.demo.forum.bc_forum.model.User;
+import main.java.com.demo.forum.bc_forum.service.JsonPlaceholderServiceImpl;
 
 @RestController
 @ResponseBody
@@ -23,7 +22,7 @@ public class JsonPlaceholderController {
     // "comments".
 
     private final JsonPlaceholderServiceImpl jsonPlaceholderServiceImpl;
-    private List<Post> posts;
+    private List<Post> posts; 
     private List<Comment> comments;
     private List<User> users;
 
