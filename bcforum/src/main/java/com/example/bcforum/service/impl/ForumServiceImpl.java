@@ -2,13 +2,19 @@ package com.example.bcforum.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.bcforum.entity.CommentEntity;
+import com.example.bcforum.entity.PostsEntity;
+import com.example.bcforum.entity.UsersEntity;
 import com.example.bcforum.exception.AllExceptions;
 import com.example.bcforum.exception.ErrorCode;
 import com.example.bcforum.model.dto.CommentDTO;
@@ -66,6 +72,68 @@ public class ForumServiceImpl implements ForumService {
         } catch (RestClientException e) {
             throw AllExceptions.of(ErrorCode.REST_CLIENT_EX, this.errorMessage);
         }
+    }
+
+    @Override
+    public UsersEntity createUsers(UsersEntity user){
+        return null;
+
+    }
+    @Override
+    public Boolean deleteUsers(Long id){
+        return null;
+    }
+    @Override
+    public UsersEntity updateUsers(Long id, UsersEntity user){
+        return null;
+    }
+    @Override
+    public UsersEntity pathUserWebsite(Long id, String website){
+        return null;
+    }
+    @Override
+    public Optional<UsersEntity> findByUsername(String username){
+        return null;
+    }
+    @Override
+    public UsersEntity getUserById(@RequestParam Long id){
+        return null;
+    }
+    @Override
+    public PostsEntity createPosts(PostsEntity post){
+        return null;
+    }
+    @Override
+    public List<PostsEntity> getAllPosts(){
+        return null;
+    }
+    @Override
+    public PostsEntity getPostById(@PathVariable Long id){
+        return null;
+    }
+    @Override
+    public Boolean AddNewPost(@PathVariable Long id){
+        return null;
+    }
+    @Override
+    public Boolean DeletePost(@PathVariable Long id){
+        return null;
+    }
+    @Override
+    public List<CommentEntity> getAllComments(){
+        return null;
+    }
+    @Override
+    public CommentEntity getCommentById(@RequestParam Long id){
+        return null;
+    }
+    @Override
+    public Boolean AddNewComment(@PathVariable Long id){
+        return null;
+    }
+    @Override
+    public Boolean DeleteComment(@PathVariable Long id){
+        return null;
     }
 
 }

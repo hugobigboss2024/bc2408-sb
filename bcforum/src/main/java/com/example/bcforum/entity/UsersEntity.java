@@ -26,8 +26,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsersEntity implements Serializable {
-  @Id // Primary Key
+  @Id 
   @GeneratedValue(strategy = GenerationType.IDENTITY) 
+  private Long id;
   private String name;
   private String username;
   private String email;
