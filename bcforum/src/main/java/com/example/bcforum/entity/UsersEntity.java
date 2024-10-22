@@ -36,6 +36,7 @@ public class UsersEntity implements Serializable {
   private String phone;
   private String website;
   private String company;
+  
 
   @Builder.Default
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,

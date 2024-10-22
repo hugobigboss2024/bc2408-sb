@@ -2,13 +2,10 @@ package com.example.bcforum.service.impl;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -64,7 +61,7 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public List<CommentDTO> getComment() {
+    public List<CommentDTO> getComments() {
         String url = Url.builder().scheme(Scheme.HTTPS).domain(this.jphDomain).endpoint(this.commentsEndpoint).build()
                 .toUriString();
         try {
@@ -74,66 +71,42 @@ public class ForumServiceImpl implements ForumService {
         }
     }
 
-    @Override
-    public UsersEntity createUsers(UsersEntity user){
-        return null;
+    
+    
+    
 
-    }
     @Override
-    public Boolean deleteUsers(Long id){
-        return null;
+    public List<UsersEntity> getUsersE() {
+        String url = Url.builder().scheme(Scheme.HTTPS).domain(this.jphDomain).endpoint(this.usersEndpoint).build()
+                .toUriString();
+        try {
+            return Arrays.asList(restTemplate.getForObject(url, UsersEntity[].class));
+        } catch (RestClientException e) {
+            throw AllExceptions.of(ErrorCode.REST_CLIENT_EX, this.errorMessage);
+        }
     }
+
     @Override
-    public UsersEntity updateUsers(Long id, UsersEntity user){
-        return null;
+        public List<PostsEntity> getPostsE() {
+        String url = Url.builder().scheme(Scheme.HTTPS).domain(this.jphDomain).endpoint(this.postsEndpoint).build()
+                .toUriString();
+        try {
+            return Arrays.asList(restTemplate.getForObject(url, PostsEntity[].class));
+        } catch (RestClientException e) {
+            throw AllExceptions.of(ErrorCode.REST_CLIENT_EX, this.errorMessage);
+        }
     }
+
     @Override
-    public UsersEntity pathUserWebsite(Long id, String website){
-        return null;
+    public List<CommentEntity> getCommentsE() {
+        String url = Url.builder().scheme(Scheme.HTTPS).domain(this.jphDomain).endpoint(this.commentsEndpoint).build()
+                .toUriString();
+        try {
+            return Arrays.asList(restTemplate.getForObject(url, CommentEntity[].class));
+        } catch (RestClientException e) {
+            throw AllExceptions.of(ErrorCode.REST_CLIENT_EX, this.errorMessage);
+        }
     }
-    @Override
-    public Optional<UsersEntity> findByUsername(String username){
-        return null;
-    }
-    @Override
-    public UsersEntity getUserById(@RequestParam Long id){
-        return null;
-    }
-    @Override
-    public PostsEntity createPosts(PostsEntity post){
-        return null;
-    }
-    @Override
-    public List<PostsEntity> getAllPosts(){
-        return null;
-    }
-    @Override
-    public PostsEntity getPostById(@PathVariable Long id){
-        return null;
-    }
-    @Override
-    public Boolean AddNewPost(@PathVariable Long id){
-        return null;
-    }
-    @Override
-    public Boolean DeletePost(@PathVariable Long id){
-        return null;
-    }
-    @Override
-    public List<CommentEntity> getAllComments(){
-        return null;
-    }
-    @Override
-    public CommentEntity getCommentById(@RequestParam Long id){
-        return null;
-    }
-    @Override
-    public Boolean AddNewComment(@PathVariable Long id){
-        return null;
-    }
-    @Override
-    public Boolean DeleteComment(@PathVariable Long id){
-        return null;
-    }
+    
 
 }

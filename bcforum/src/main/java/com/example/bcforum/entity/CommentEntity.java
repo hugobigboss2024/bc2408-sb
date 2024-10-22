@@ -31,5 +31,5 @@ public class CommentEntity {
 
   @ManyToOne
   @JoinColumn(name = "post_id", nullable = false)
-  private PostsEntity post;
+  private PostsEntity postId;
 }

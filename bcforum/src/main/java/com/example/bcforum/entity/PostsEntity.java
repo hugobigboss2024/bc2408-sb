@@ -9,6 +9,8 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -28,11 +30,20 @@ public class PostsEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+  //private Long userId;
   private String title;
   private String body;
+
+  
 
   @Builder.Default
   @OneToMany(mappedBy = "post", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
   private List<CommentEntity> comments = new ArrayList<>();
+
+   @ManyToOne
+  @JoinColumn(name = "user_id", nullable = false)
+  private UsersEntity userId; 
+
+
 }

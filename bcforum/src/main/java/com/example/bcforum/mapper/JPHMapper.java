@@ -8,6 +8,9 @@ import com.example.bcforum.dto.UserCommentDto;
 import com.example.bcforum.dto.UserDto;
 import com.example.bcforum.dto.UserDto.PostDto;
 import com.example.bcforum.dto.UserDto.PostDto.CommentDto;
+import com.example.bcforum.entity.CommentEntity;
+import com.example.bcforum.entity.PostsEntity;
+import com.example.bcforum.entity.UsersEntity;
 import com.example.bcforum.model.dto.CommentDTO;
 import com.example.bcforum.model.dto.PostDTO;
 import com.example.bcforum.model.dto.UserDTO;
@@ -48,5 +51,17 @@ public class JPHMapper {
     public UserCommentDto.CommentDto mapto(CommentDTO comment){
         return UserCommentDto.CommentDto.builder().name(comment.getName()).email(comment.getEmail()).body(comment.getBody()).build();
 
+    }
+
+    public UsersEntity mapE(UserDto user){
+        return UsersEntity.builder().id(user.getId()).name(user.getName()).username(user.getUsername()).email(user.getEmail()).address(user.getAddress().toString()).phone(user.getPhone()).website(user.getWebsite()).company(user.getCompany().getName()).build();
+    }
+
+    public PostsEntity mapE(PostDto post){
+        return PostsEntity.builder().id(post.getId()).title(post.getTitle()).body(post.getBody()).build();
+    }
+
+    public CommentEntity mapE(CommentDto comment){
+        return CommentEntity.builder().id(comment.getId()).name(comment.getName()).email(comment.getEmail()).body(comment.getBody()).build();
     }
 }

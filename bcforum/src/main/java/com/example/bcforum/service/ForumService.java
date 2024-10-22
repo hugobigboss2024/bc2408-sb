@@ -1,7 +1,6 @@
 package com.example.bcforum.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.example.bcforum.entity.CommentEntity;
 import com.example.bcforum.entity.PostsEntity;
@@ -15,38 +14,17 @@ public interface ForumService {
 
     List<PostDTO> getPosts();
 
-    List<CommentDTO> getComment();
+    List<CommentDTO> getComments();
 
     /////////////////////////////////
-    UsersEntity createUsers(UsersEntity user);
+    List<UsersEntity> getUsersE();
 
-    Boolean deleteUsers(Long id);
+    List<PostsEntity> getPostsE();
 
-    UsersEntity updateUsers(Long id, UsersEntity user);
+    List<CommentEntity> getCommentsE();
 
-    UsersEntity pathUserWebsite(Long id, String website);
-
-    Optional<UsersEntity> findByUsername(String username);
-
-    UsersEntity getUserById(Long id);
-
-    PostsEntity createPosts(PostsEntity post);
-
-    List<PostsEntity> getAllPosts();
-
-    PostsEntity getPostById(Long id);
-
-    Boolean AddNewPost(Long id);
-
-    Boolean DeletePost(Long id);
-
-    List<CommentEntity> getAllComments();
-
-    CommentEntity getCommentById(Long id);
-
-    Boolean AddNewComment(Long id);
-
-    Boolean DeleteComment(Long id);
+    
+    
 
     /* 
      * List<UsersEntity> getAllUsers();
