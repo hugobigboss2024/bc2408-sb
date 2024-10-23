@@ -1,0 +1,17 @@
+service:
+  port: 8088
+
+spring:
+  datasource:
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    url: "jdbc:mysql://127.0.0.1:3306/STOCK_PJ"
+    username: "root"
+    password: "Cg54499696"
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: create
+api:
+  jph:
+    domain: "query1.finance.yahoo.com/v7/finance"
+    endpoints:
+      symbols: "/quote?symbols=0388.HK&crumb=0USFngDhYhQ"
