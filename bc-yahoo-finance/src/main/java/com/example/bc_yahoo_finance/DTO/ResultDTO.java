@@ -1,18 +1,16 @@
-package com.example.bc_yahoo_finance.entity;
+package com.example.bc_yahoo_finance.DTO;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Builder;
-import lombok.Getter;
+import org.springframework.web.bind.annotation.RestController;
 
-@Entity
-@Getter
+import lombok.Builder;
+import lombok.Data;
+
+@RestController
+@Data
 @Builder
-@Table(name = "RESULT")
-public class ResultEntity {
+public class ResultDTO {
     private String language;
     private String region;
     private String quoteType;
@@ -91,6 +89,5 @@ public class ResultEntity {
     private BigDecimal fiftyTwoWeekLow;
     private BigDecimal fiftyTwoWeekHigh;
     private BigDecimal fiftyTwoWeekChangePercent;
-    @Id
     private String symbol;
 }
