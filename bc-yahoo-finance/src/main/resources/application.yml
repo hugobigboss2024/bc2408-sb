@@ -1,5 +1,5 @@
-service:
-  port: 8088
+server:
+   port: 8088
 
 spring:
   datasource:
@@ -10,8 +10,8 @@ spring:
   jpa:
     show-sql: true
     hibernate.ddl-auto: create
-api:
-  jph:
-    domain: "query1.finance.yahoo.com/v7/finance"
-    endpoints:
-      symbols: "/quote?symbols=0388.HK&crumb=0USFngDhYhQ"
+# api:
+#   jph:
+#     domain: "query1.finance.yahoo.com/v7/finance"
+#     endpoints:
+#       symbols: "/quote?symbols=0388.HK&crumb=0USFngDhYhQ"

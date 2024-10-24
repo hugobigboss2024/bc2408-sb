@@ -5,8 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import yahoofinance.YahooFinance;
+
 public class CookieStorage {
     private Map<String, HttpCookie> cookieMap = new HashMap<>();
+
+    private YahooFinance yahooFinance;
+
+    public CookieStorage(YahooFinance yahooFinance) {
+        this.yahooFinance = yahooFinance;
+    }
 
     public void addCookie(HttpCookie cookie) {
         cookieMap.put(cookie.getName(), cookie);

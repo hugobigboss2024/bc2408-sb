@@ -47,4 +47,11 @@ public class CookieManager {
             return cookies.get(0).split(";")[0];
         }
     }
+
+    public static void main(String[] args) {
+        RestTemplate restTemplate = new RestTemplate();
+        CookieManager cookieManager = new CookieManager(restTemplate);
+        String cookie = cookieManager.getCookie();
+        System.out.println("Cookie: " + cookie + "TestBy");
+    }
 }
