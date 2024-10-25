@@ -48,6 +48,15 @@ public class CookieManager {
         }
     }
 
+    public String getCookieKey() {
+        String cookie = getCookie();
+        try {
+            return cookie.split(";")[0];
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
         RestTemplate restTemplate = new RestTemplate();
         CookieManager cookieManager = new CookieManager(restTemplate);

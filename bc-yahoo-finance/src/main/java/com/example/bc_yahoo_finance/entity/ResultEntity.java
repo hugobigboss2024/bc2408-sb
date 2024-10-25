@@ -5,12 +5,15 @@ import java.math.BigDecimal;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
-@Builder
+@Setter
+// @Builder
+@Data
 @Table(name = "RESULT")
 public class ResultEntity {
     private String language;
@@ -93,4 +96,7 @@ public class ResultEntity {
     private BigDecimal fiftyTwoWeekChangePercent;
     @Id
     private String symbol;
+
+    public ResultEntity() {
+    }
 }

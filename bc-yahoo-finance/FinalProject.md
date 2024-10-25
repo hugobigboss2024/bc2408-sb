@@ -27,6 +27,9 @@
 	Create CommandLineRunner to clear the Redis entry during server start process.
 	Think about the design and structure of the symbol list being stored in Redis.
 	Sample entry in Redis (for stock list)
+
+	  1 {"STOCK-LIST" : ["0388.HK", "0700.HK"]}
+	  
     	Task 4 - Scheduler For Extract and Load
 	Create a scheduler (every 5 minutes, i.e. 10:00:05:005:005:00, etc.) in order to get stock quote data, based
 	on the list of symbols stored in Redis/Table (developed in Task 3) and then store the quote data in table
