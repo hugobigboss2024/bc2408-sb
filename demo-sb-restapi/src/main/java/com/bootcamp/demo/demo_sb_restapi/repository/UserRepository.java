@@ -20,7 +20,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     Optional<UserEntity> findByWebsite(String website);
 
-    Optional<UserEntity> findByWebsiteAndPhone(String);
+    Optional<UserEntity> findByWebsiteAndPhone(String aa);
 }
 // ! Concept of Hibernate:
 // 1. Hibernate generate ABC.class, which is implementing interface
